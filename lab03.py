@@ -2,11 +2,9 @@
 # KUID: 3178995
 # LAB Session (Day/Time): Wednesday 11am
 # LAB Assignment: Lab 3
-# Description:
-#
-#
-#
-# Collaborators/Sources:
+# Description: Program takes in two matrices with zeros and ones and calculates 
+# their Boolean product
+# Collaborators/Sources: None
 
 # Note: if you are working in python, you are
 # REQUIRED to call this function to get your
@@ -55,22 +53,24 @@ def print_matrix(m):
             print(item, end=" ")
         print()
 
-
-# Example
+#Main
 def main():
+    #Gets first matrix
     a = get_matrix(True)
     print("Got A: ")
     print_matrix(a)
 
-
+    #Gets second matrix
     b = get_matrix(True)
     print("Got B: ")
     print_matrix(b)
 
+    #Gathers dimensions for the result matrix
     m = len(a)
     k = len(a[0])
     n = len(b[0])
 
+    #Creates empty result matrix with appropriate demensions
     result =[]
     for i in range(m):
         row = []
@@ -78,6 +78,7 @@ def main():
             row.append(0)
         result.append(row)
 
+    #Calculates the Boolean product of A and B
     for i in range(m):
         for j in range(n):
             for l in range(k):
@@ -91,7 +92,7 @@ def main():
                 elif a[i][l] == 0 and b[l][j] == 1:
                     result[i][j] = 0
 
-
+    #Prints result
     print("Result: ")
     print_matrix(result)
 main()
